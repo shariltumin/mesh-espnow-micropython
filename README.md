@@ -12,5 +12,8 @@ Example scripts
 
 Diagram1
 
+![espnow-dynamic-mesh](https://github.com/shariltumin/mesh-espnow-micropython/blob/main/media/mesh_dia1.png)
 
 Diagram2
+
+![mesh-cloud-bridge](https://github.com/shariltumin/mesh-espnow-micropython/blob/main/media/Bridge.jpeg)
