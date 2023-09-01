@@ -140,12 +140,12 @@ def get_any(pm): # get any package from espnow inbuffer
           while wait():yield
           continue  # restart loop
        peer, msg = ew.recv() # this is blocking, therefore after ew.any()
+       if len(msg) < 3: continue # msg MUST be 3 chars or more
        # add peer to espnow peers_table
        try:
           ew.add_peer(peer)
        except:
           pass
-       if len(msg) < 3: yield
        msg_typ = msg[:3]     # message type: HEY, AUQ, AUR, MSG, BYE
        if msg_typ == b'HEY':
           print('Get HEY from', peer.hex())
