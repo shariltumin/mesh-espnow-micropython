@@ -140,7 +140,9 @@ def get_any(pm): # get any package from espnow inbuffer
           while wait():yield
           continue  # restart loop
        peer, msg = ew.recv() # this is blocking, therefore after ew.any()
-       if len(msg) < 3: continue # msg MUST be 3 chars or more
+       if len(msg) < 3: # msg MUST be 3 chars or more
+          yield         # yield to other tasks
+          continue      # before continue loop
        # add peer to espnow peers_table
        try:
           ew.add_peer(peer)
